@@ -25,7 +25,7 @@ install:
 script:
   - mkdir --parents ../builds
   - cd ../builds
-  - cmake -DCMAKE_BUILD_TYPE=Release ../Task_3_with_tests
-  - cmake -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=gold ../Task_3_with_tests
+  - cmake -DCMAKE_BUILD_TYPE=Release ../Json4
+  - cmake -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=gold ../Json4
   - make
   - ./executable
