@@ -1,21 +1,19 @@
 cmake_minimum_required (VERSION 2.8)
-include(gtest.cmake)
+
 include_directories(SYSTEM
     ./
 )
-add_library ( json STATIC 
-json.cpp json.hpp
+include_directories (
+json/include
 )
 
 # if(CMAKE_COMPILER_IS_GNUCXX)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fsanitize=address -O1 -Wall -Wextra -Wno-unused-command-line-argument -Wshadow -Wnon-virtual-dtor -pedantic")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Iinclide -fsanitize=address -O1 -Wall -Wextra -Wno-unused-command-line-argument -Wshadow -Wnon-virtual-dtor -pedantic")
 # endif(CMAKE_COMPILER_IS_GNUCXX)
 
 # enum your files
 add_executable(executable
-  test.cpp
+  main.cpp
 )
-find_package (Threads)
-target_link_libraries (executable -fsanitize=address gtest ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries (executable
-json) 
+
+
