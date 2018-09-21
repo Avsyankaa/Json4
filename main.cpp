@@ -8,5 +8,5 @@ json j1 = R"([
  [100024, 100027, 100050],
  ["Futures contract for USD/RUB", "Futures contract for index RTS", "Futures contract for Gazprom shares"]
 ])" _json;
- std::cout<< j1<< endl;
+ std::cout<< j1<< std::endl;
 }
